@@ -1,0 +1,108 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f0f0f0;
+    color: #333;
+    margin: 0;
+    padding: 0;
+}
+
+/* Status Bar (Header) */
+.status-bar {
+    background-color: #4CAF50; /* Hijau Khas Game */
+    color: white;
+    padding: 15px 30px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.coin-display {
+    font-size: 1.5em;
+    font-weight: bold;
+    /* Efek animasi koin jatuh bisa ditambahkan di sini menggunakan CSS animation */
+}
+
+#add-coin-btn {
+    background-color: #FFC107; /* Kuning Cerah */
+    border: none;
+    padding: 10px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background-color 0.3s;
+}
+
+#add-coin-btn:hover {
+    background-color: #e0b400;
+}
+
+/* Panel Utama */
+main {
+    display: flex;
+    padding: 20px;
+    gap: 20px;
+}
+
+.shop-panel, .house-panel {
+    flex: 1;
+    background-color: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.05);
+}
+
+/* Grid Toko dan Inventaris */
+.shop-grid, .inventory-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+    gap: 15px;
+    margin-top: 15px;
+}
+
+.item-card {
+    border: 2px solid #ddd;
+    border-radius: 8px;
+    padding: 10px;
+    text-align: center;
+    transition: transform 0.2s, box-shadow 0.2s;
+}
+
+.item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+}
+
+.item-card img {
+    width: 80px;
+    height: 80px;
+    object-fit: contain;
+}
+
+/* Interaktivitas UX */
+.buy-button {
+    background-color: #2196F3; /* Biru Beli */
+    color: white;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 3px;
+    margin-top: 5px;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.buy-button.disabled {
+    background-color: #BDBDBD; /* Abu-abu Non-aktif */
+    cursor: not-allowed;
+}
+
+.buy-button:not(.disabled):hover {
+    background-color: #0c7cd5;
+}
+
+/* Item Inventaris siap Drag */
+.inventory-item {
+    cursor: grab;
+    border: 2px dashed #4CAF50;
+    /* Kelas ini akan menerima properti drag-and-drop */
+}
